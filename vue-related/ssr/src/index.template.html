@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--使用装花括号(double-mustache)进行HTML转义插值(HTML-escaped omterpolation)-->
+  <title>{{ title || 'Vue SSR' }}</title>
+
+  <!--使用三花括号(triple-mustache)进行HTML不转义插值(non-HTML-escaped interpolation)-->
+  {{{meta}}}
+</head>
+<body>
+  <h2>SSR</h2>
+  <!--注意，在没有 data-server-rendered 属性的元素上，
+    还可以向 $mount 函数的 hydrating 参数位置传入 true，来强制使用激活模式(hydration)：-->
+  <!--vue-ssr-outlet-->
+  <script>
+    console.log('hello');
+  </script>
+</body>
+</html>
